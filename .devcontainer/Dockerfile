@@ -12,8 +12,7 @@ RUN apt-get update \
 # Install Apache Airflow
 ARG AIRFLOW_VERSION=2.7.1  
 RUN pip install "apache-airflow==${AIRFLOW_VERSION}" \
-    --constraint 
-"https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-3.10.txt"
+    --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-3.10.txt"
 # constrains file ensures that we are not getting everything and only gettin the compatible versions so that our code is reproducable
 
 WORKDIR /workspace
