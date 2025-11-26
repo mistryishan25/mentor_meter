@@ -1,0 +1,7 @@
+{
+    "name" : "Mentor Meter Dev Container",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "postCreateCommand": "airflow db init"
+}
