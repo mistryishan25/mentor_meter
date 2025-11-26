@@ -15,4 +15,8 @@ RUN pip install "apache-airflow==${AIRFLOW_VERSION}" \
     --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-3.10.txt"
 # constrains file ensures that we are not getting everything and only gettin the compatible versions so that our code is reproducable
 
+COPY ..requirements.txt ../workspace/requirements.txt  
+# Install all packages listed in requirements.txt
+RUN pip install -r /workspace/requirements.txt
+
 WORKDIR /workspace
